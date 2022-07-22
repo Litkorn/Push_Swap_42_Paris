@@ -6,7 +6,7 @@
 /*   By: cleibeng <cleibeng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 16:26:34 by cleibeng          #+#    #+#             */
-/*   Updated: 2022/06/07 16:47:06 by cleibeng         ###   ########.fr       */
+/*   Updated: 2022/07/22 06:09:15 by cleibeng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char	**ft_split(char const *s, char c)
 	s1 = (char *)s;
 	word = 0;
 	str = malloc(sizeof(char *) * (len + 1));
-	if (!str)
+	if (!str || !s)
 		return (NULL);
 	i = -1;
 	while (++i < len)

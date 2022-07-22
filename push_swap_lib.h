@@ -6,7 +6,7 @@
 /*   By: cleibeng <cleibeng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 15:11:58 by cleibeng          #+#    #+#             */
-/*   Updated: 2022/07/16 07:28:19 by cleibeng         ###   ########.fr       */
+/*   Updated: 2022/07/22 06:52:42 by cleibeng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 //typedef
 typedef struct s_stack
 {
-	long int		content;
+	long long int		content;
 	int				index;
 	struct s_stack	*next;
 }					t_stack;

@@ -6,7 +6,7 @@
 /*   By: cleibeng <cleibeng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:37:08 by cleibeng          #+#    #+#             */
-/*   Updated: 2022/07/08 16:30:43 by cleibeng         ###   ########.fr       */
+/*   Updated: 2022/07/22 07:25:05 by cleibeng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ long long int	ft_atoi_push(const char *str)
 	i = 0;
 	n = 1;
 	a = 0;
+	if (!str)
+		return (0);
 	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
 		i++;
 	if (str[i] == '-' || str[i] == '+' )
@@ -34,7 +36,7 @@ long long int	ft_atoi_push(const char *str)
 		a = a * 10 + str[i] - '0';
 		i++;
 	}
-	if (str[i - 1] < '0' || str[i - 1] > '9')
+	if (str[i - 1] < '0' || str[i - 1] > '9' || str[i] != '\0')
 		return (2147483650);
 	return (a * n);
 }
@@ -47,6 +49,7 @@ static t_stack	*create_stc_part2(t_stack *stack_a, char **argv)
 
 	i = 0;
 	temp = stack_a;
+	temp2 = NULL;
 	temp2 = temp->next;
 	while (argv[i] != NULL)
 	{
@@ -75,6 +78,8 @@ t_stack	*ft_create_stc(char **argv)
 	temp->content = ft_atoi_push(argv[0]);
 	temp->index = 0;
 	temp->next = NULL;
+	if (argv[0] && argv[1] == NULL)
+		return (stack_a);
 	return (create_stc_part2(stack_a, &argv[1]));
 }
 
