@@ -6,15 +6,15 @@
 #    By: cleibeng <cleibeng@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/03 14:42:47 by cleibeng          #+#    #+#              #
-#    Updated: 2022/07/16 07:24:41 by cleibeng         ###   ########.fr        #
+#    Updated: 2022/08/09 18:11:27 by cleibeng         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRCS = push_swap.c\
-		sort_large.c\
-		sort_small.c\
+		utils/sort_large.c\
+		utils/sort_small.c\
 		utils/create_list.c\
 		utils/operations_a.c\
 		utils/operations_b.c\

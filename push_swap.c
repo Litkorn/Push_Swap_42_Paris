@@ -6,7 +6,7 @@
 /*   By: cleibeng <cleibeng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 15:14:46 by cleibeng          #+#    #+#             */
-/*   Updated: 2022/07/22 06:13:27 by cleibeng         ###   ########.fr       */
+/*   Updated: 2022/08/09 17:17:52 by cleibeng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,18 @@ static void	clean_main(char ***tab, t_stack **stack)
 	exit (1);
 }
 
+void	main2(char ***tab, char **argv, t_stack **stack_a)
+{
+	(*tab) = ft_split(argv[1], ' ');
+	if ((*tab)[0] == NULL)
+	{
+		ft_clean_tab(tab);
+		exit (0);
+	}
+	(*stack_a) = ft_create_stc(*tab);
+	ft_clean_tab(tab);
+}
+
 int	main(int argc, char **argv)
 {
 	char	**tab;
@@ -33,11 +45,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		exit(0);
 	if (argc == 2)
-	{
-		tab = ft_split(argv[1], ' ');
-		stack_a = ft_create_stc(tab);
-		ft_clean_tab(&tab);
-	}
+		main2(&tab, argv, &stack_a);
 	else
 		stack_a = ft_create_stc(&argv[1]);
 	if (argc == 2 && (stack_a == NULL || tab == NULL))

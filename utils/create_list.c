@@ -6,7 +6,7 @@
 /*   By: cleibeng <cleibeng@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 13:37:08 by cleibeng          #+#    #+#             */
-/*   Updated: 2022/07/22 07:25:05 by cleibeng         ###   ########.fr       */
+/*   Updated: 2022/08/09 17:16:18 by cleibeng         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ long long int	ft_atoi_push(const char *str)
 			n = -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[i])
 	{
+		if (str[i] < '0' || str[i] > '9' || i > 12)
+			return (2147483650);
 		a = a * 10 + str[i] - '0';
 		i++;
 	}
-	if (str[i - 1] < '0' || str[i - 1] > '9' || str[i] != '\0')
-		return (2147483650);
 	return (a * n);
 }
 
